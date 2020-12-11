@@ -2,9 +2,38 @@
 
 body {
   font-family: 'Roboto', sans-serif !important;
+  overflow: hidden;
+  background: #EBEBEB;
 }
 .navbar{
   background-color: #4A56A4 !important;
+}
+
+.form-input{
+  background-image: linear-gradient(to top right, #667EEA ,#764BA2);
+  color:white;
+  border: none;
+  border-radius: 25px;
+}
+
+.form-input::placeholder{
+  color: white;
+  opacity: 0.9;
+}
+
+.form-input:focus{
+  color: white;
+  outline: none;
+  border: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.submit-button{
+  background-image: linear-gradient(to top right, #667EEA ,#764BA2);
+  border: none;
+  border-radius: 25px;
 }
 
 @keyframes App-logo-spin {

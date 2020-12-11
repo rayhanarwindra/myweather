@@ -28,20 +28,20 @@ function App() {
   }
 
   const getWeather = () => {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3e70d8524c9a70b8d20ee49b142ee968&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3e70d8524c9a70b8d20ee49b142ee968&units=metric`)
       .then(response => response.json())
       .then(data => setWeather(data));
-    console.log(weather);
   }
 
   useEffect( () => {
     getWeather();
+    document.title = `Weather at ${city}`
   }, [city]);
   return (
     <div className="App">
       <Navbar className="navbar" bg="dark" variant="dark">
           <Container>
-            <Navbar.Brand style={{fontWeight:"bold", fontSize:"27px"}} href="#home">MyWeather</Navbar.Brand>
+            <Navbar.Brand style={{fontWeight:"bold", fontSize:"25px"}} href="#home">MyWeather</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
           </Container>
         </Navbar>
@@ -50,25 +50,25 @@ function App() {
           <Row>
             <Col>
               <Form.Group controlId="formBasicEmail">
-                <Form.Control value={value} onChange={handleChange} type="text" placeholder="Weather in your city..." />
+                <Form.Control className="form-input" value={value} onChange={handleChange} type="text" placeholder="Weather in your city..." />
               </Form.Group>
             </Col>
             <Col>
-              <Button variant="primary" type="submit">Submit</Button>
+              <Button className="submit-button" type="submit">Submit</Button>
             </Col>
           </Row>
         </Form>          
         { isEmpty() || weather.cod !== 200 ?
         <div>
           <img style={{width: '25%', height:'25%'}} src={cloud} alt="Cloud"></img>
-          <h3>Please input a search query...</h3>
+          <h3 style={{color: '#465AFA'}}>Please input a search query...</h3>
         </div>
         :
         <div>
           <WeatherInfo {...weather}></WeatherInfo>
         </div>
         }
-        <p className="mt-2">Made by Rayhan Arwindra</p>
+        <p className="mt-2" style={{color: '#465AFA'}}>Made by <span style={{fontWeight:'bold'}}>Rayhan Arwindra</span></p>
         </Container>
         
     </div>

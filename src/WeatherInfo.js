@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import './WeatherInfo.css'
 import { Card, Col, Row } from 'react-bootstrap';
 
 const WeatherInfo = ({
@@ -12,7 +12,7 @@ const WeatherInfo = ({
 }) => {
     return(
         <div>
-            <Card style={{ width: '100%' }} className="mt-2">
+            <Card style={{ width: '100%' }} className="mt-2 card">
                 <Card.Body>
                     <Card.Title><h3>{`${name}, ${sys.country} Weather`}</h3></Card.Title>
                     <Card.Text>

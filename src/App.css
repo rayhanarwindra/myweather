@@ -30,6 +30,10 @@ body {
   box-shadow: none !important;
 }
 
+/* .form-group{
+  margin: 0 auto;
+} */
+
 .submit-button{
   background-image: linear-gradient(to top right, #667EEA ,#764BA2);
   border: none;

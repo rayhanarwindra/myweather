@@ -48,27 +48,27 @@ function App() {
         <Container className='mt-3'>
         <Form onSubmit={handleSubmit}>
           <Row>
-            <Col>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Control className="form-input" value={value} onChange={handleChange} type="text" placeholder="Weather in your city..." />
-              </Form.Group>
-            </Col>
-            <Col>
-              <Button className="submit-button" type="submit">Submit</Button>
-            </Col>
+              <Col>
+                <Form.Group controlId="formBasicEmail">
+                  <Form.Control className="form-input" value={value} onChange={handleChange} type="text" placeholder="Weather in your city..." />
+                </Form.Group>
+              </Col>
+              <Col>
+                <Button className="submit-button" type="submit">Submit</Button>
+              </Col>
           </Row>
         </Form>          
         { isEmpty() || weather.cod !== 200 ?
-        <div>
+        <div className="mt-5 text-center">
           <img style={{width: '25%', height:'25%'}} src={cloud} alt="Cloud"></img>
-          <h3 style={{color: '#465AFA'}}>Please input a search query...</h3>
+          <h3 style={{color: '#465AFA'}} className="mt-4">Please input a search query...</h3>
         </div>
         :
         <div>
           <WeatherInfo {...weather}></WeatherInfo>
         </div>
         }
-        <p className="mt-2" style={{color: '#465AFA'}}>Made by <span style={{fontWeight:'bold'}}>Rayhan Arwindra</span></p>
+        <p className="mt-2" style={{color: '#465AFA', position: 'absolute', bottom: '0'}}>Made by <span style={{fontWeight:'bold'}}>Rayhan Arwindra</span></p>
         </Container>
         
     </div>
